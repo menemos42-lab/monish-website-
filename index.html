@@ -3,65 +3,462 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Monish Plumber | Professional Plumbing Services Gadarpur</title>
     <style>
+        /* Modern CSS Variables & Reset */
+        :root {
+            --primary: #0056b3;
+            --primary-dark: #003d82;
+            --secondary: #f4f7f6;
+            --text-dark: #22252a;
+            --text-light: #6c757d;
+            --white: #ffffff;
+            --accent: #ffc107;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
+
         body {
-            font-family: Arial, sans-serif;
+            background-color: var(--secondary);
+            color: var(--text-dark);
             line-height: 1.6;
-            color: #333;
         }
+
+        /* Header & Navigation */
         header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1rem;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0056b3 0%, #002244 100%);
+            color: var(--white);
+            padding: 80px 20px;
             text-align: center;
         }
-        nav {
-            background-color: #333;
-            padding: 1rem;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        main {
-            padding: 2rem;
-            max-width: 1000px;
+
+        .hero-content {
+            max-width: 800px;
             margin: 0 auto;
         }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text-dark);
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(255, 193, 7, 0.3);
+        }
+
+        .btn:hover {
+            background: #e0a800;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container Layout */
+        .main-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        section h2 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--secondary);
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* Projects Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: var(--secondary);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.03);
+        }
+
+        .gallery-info {
+            padding: 15px;
+            background: var(--white);
+        }
+
+        .gallery-info h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .gallery-info p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Contact & Community Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-list strong {
+            font-size: 14px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .info-list span, .info-list a {
+            font-size: 18px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .info-list a {
+            color: var(--primary);
+            word-break: break-all;
+        }
+
+        .info-list a:hover {
+            text-decoration: underline;
+        }
+
+        .community-box {
+            background: #f8f9fa;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .community-box h3 {
+            color: #28a745;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        /* Footer */
         footer {
-            background-color: #333;
-            color: white;
+            background: var(--text-dark);
+            color: #a0a5b0;
             text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
+            padding: 30px 20px;
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        footer p {
+            max-width: 600px;
+            margin: 0 auto 10px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Optimized layout streamlining for mobile users */
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            section {
+                padding: 25px 20px;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- Header & Navigation -->
     <header>
-        <h1>Welcome to My Website</h1>
+        <div class="nav-container">
+            <a href="#" class="logo">Monish<span>Ansari</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Our Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <main>
-        <h2>Hello!</h2>
-        <p>This is a basic HTML template to get you started.</p>
-    </main>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Monish Plumbing Services</h1>
+            <p>Premium architectural and residential plumbing solutions executing heavy-duty pipeline infrastructure and top-tier sanitary fittings.</p>
+            <div class="badge-container">
+                <span class="badge">📍 Based in Gadarpur, India</span>
+                <span class="badge">🛠️ Expert Plumbing Engineer</span>
+                <span class="badge">📺 Plumbing Educator</span>
+            </div>
+            <a href="#contact" class="btn">Get Expert Consultation</a>
+        </div>
+    </div>
+
+    <!-- Main Content Layout -->
+    <div class="main-container">
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Specialized Expertise</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>High-Pressure Water Tank Networks</h3>
+                    <p>Expert layout design and structural pipe matching for multi-tank architectures. Complete setup optimization utilizing high-durability Supreme structural equipment.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Concealed Pipeline Systems</h3>
+                    <p>Precision-engineered in-wall internal infrastructure configurations utilizing advanced pressure-tight Ashirvad Flowpro+ piping networks built to prevent leakages sustainably.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Premium Bathroom Installations</h3>
+                    <p>Sleek, elite luxury washrooms built using modern wall-hung toilet frames, high-end Grohe hidden flushing systems, and designer Prayag countertop washbasins.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Portfolio Gallery -->
+        <section id="projects">
+            <h2>Featured Projects Portfolio</h2>
+            <div class="gallery-grid">
+                
+                <div class="gallery-item">
+                    <img src="FB_IMG_1781016512937.jpg" alt="Water Tank Setup" class="gallery-img">
+                    <div class="gallery-info">
+                        <h4>Multi-Pipe Overhead Distribution</h4>
+                        <p>Supreme Siltank main manifold installation</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="FB_IMG_1781016523482.jpg" alt="Roof Pipeline Distribution Layout" class="gallery-img">
+                    <div class="gallery-info">
+                        <h4>Roof Distribution Network</h4>
+                        <p>Parallel linear high-volume layout grids</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="FB_IMG_1781016530257.jpg" alt="Concealed In-Wall Mixer Architecture" class="gallery-img">
+                    <div class="gallery-info">
+                        <h4>Concealed Valve Matrix</h4>
+                        <p>Ashirvad Flowpro+ masonry embedding</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="FB_IMG_1781016608425.jpg" alt="Prayag Luxury Washbasin Mount" class="gallery-img">
+                    <div class="gallery-info">
+                        <h4>Sanitary Fixture Finishing</h4>
+                        <p>Prayag luxury pedestal washbasin setup</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="FB_IMG_1781016630068.jpg" alt="Dual Sanitary Closet Options" class="gallery-img">
+                    <div class="gallery-info">
+                        <h4>Advanced Commode Fittings</h4>
+                        <p>Wall-hung units and Grohe hidden flushing</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact & Community Reach -->
+        <section id="contact">
+            <h2>Get in Touch & Learn</h2>
+            <div class="contact-grid">
+                <div>
+                    <ul class="info-list">
+                        <li>
+                            <strong>Service Region Location</strong>
+                            <span>Gadarpur, India</span>
+                        </li>
+                        <li>
+                            <strong>YouTube Official Channel</strong>
+                            <a href="https://youtube.com/@monishplumber786" target="_blank">youtube.com/@monishplumber786</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="community-box">
+                        <h3>Plumbing Jankari Hub</h3>
+                        <p>Join Monish Ansari's exclusive community group for expert guides, standard engineering updates, structural plumbing layout blueprints, and daily technical troubleshooting tips.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer Area -->
     <footer>
-        <p>&copy; 2026 My Website. All rights reserved.</p>
+        <p>&copy; 2026 Monish Plumbing Services. All rights reserved.</p>
+        <p>Providing exceptional architectural engineering solutions throughout Gadarpur, India.</p>
     </footer>
+
 </body>
 </html>
